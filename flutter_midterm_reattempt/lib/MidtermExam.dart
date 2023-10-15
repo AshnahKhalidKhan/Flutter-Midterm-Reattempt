@@ -76,16 +76,16 @@ class _MidtermExamState extends State<MidtermExam>
 }
 
 
-GridView _buildingView(List<Products> itemsList)
+ListView _buildingView(List<Products> itemsList)
 {
-  return GridView.builder
+  return ListView.builder
   (
-    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount
-    (
-      crossAxisCount: 1,
-      crossAxisSpacing: 10.0,
-      mainAxisSpacing: 10.0,
-    ),
+    // gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount
+    // (
+    //   crossAxisCount: 1,
+    //   crossAxisSpacing: 10.0,
+    //   mainAxisSpacing: 10.0,
+    // ),
     itemCount: itemsList.length,
     itemBuilder: (context, i)
     {
