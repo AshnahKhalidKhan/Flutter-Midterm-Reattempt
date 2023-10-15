@@ -104,14 +104,19 @@ ListView _buildingView(List<Products> itemsList)
               height: 100,
               decoration: BoxDecoration
               (
-                // borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0)),
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0)),
+                image: DecorationImage
+                (
+                  image: NetworkImage(itemsList[i].thumbnail.toString()),
+                  fit: BoxFit.cover,
+                ),
                 // borderRadius: BorderRadius.circular(20.0),
               ),
-              child: Image.network
-              (
-                itemsList[i].thumbnail.toString(), 
-                fit: BoxFit.fill,
-              ),
+              // child: Image.network
+              // (
+              //   itemsList[i].thumbnail.toString(), 
+              //   fit: BoxFit.fill,
+              // ),
             ),
             Padding
             (
