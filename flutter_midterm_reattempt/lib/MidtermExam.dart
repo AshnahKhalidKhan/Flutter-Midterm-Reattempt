@@ -164,6 +164,17 @@ ListView _buildingView(List<Products> itemsList)
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: 
                                     [
+                                      // ListView.builder
+                                      // (
+                                      //   itemCount: 4,
+                                      //   itemBuilder: (context, i)
+                                      //   {
+                                      //     return Card
+                                      //     (
+                                      //       color: Colors.amber,
+                                      //     );
+                                      //   }
+                                      // ),
                                       ListTile
                                       (
                                         title: Text(itemsList[i].title),
