@@ -140,61 +140,103 @@ ListView _buildingView(List<Products> itemsList)
                           showModalBottomSheet<void>
                           (
                             context: context, 
+                            isScrollControlled: true,
                             builder: (BuildContext context)
                             {
-                              return Container
+                              return SizedBox
                               (
+                                // constraints: BoxConstraints
+                                // (
+                                //   // minHeight: MediaQuery.sizeOf(context).height,
+                                //   minHeight: MediaQuery.of(context).size.height,
+                                //   maxHeight: MediaQuery.of(context).size.height,
+                                //   // minHeight: double.maxFinite,
+                                // ),
                                 // child: Text(itemsList[i].title),
                                 // height: double.minPositive,
-                                child: Column
+                                width: double.infinity,
+                                // height: MediaQuery.of(context).size.height,
+                                child: Wrap
                                 (
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: 
-                                  [
-                                    ListTile
-                                    (
-                                      title: Text(itemsList[i].title),
-                                      subtitle: Text(itemsList[i].description.toString()),
-                                    ),
-                                    // ListTile
-                                    // (
-                                    //   title: Text("\$" + itemsList[i].price.toString()),
-                                    //   // subtitle: Text(itemsList[i].description.toString()),
-                                    // ),
-                                    Padding
-                                    (
-                                      padding: EdgeInsets.only(left: 15.0, bottom: 15.0),
-                                      child: Text("\$" + itemsList[i].price.toString()),
-                                    ),
-                                    Padding
-                                    (
-                                      padding: EdgeInsets.only(left: 15.0, right: 15.0, bottom: 15.0),
-                                      child: Row
+                                  children: [Column
+                                  (
+                                  // 
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: 
+                                    [
+                                      ListTile
                                       (
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                        children: 
-                                        [
-                                          Row
-                                          (
-                                            children: 
-                                            [
-                                              Icon(Icons.star),
-                                              Text(itemsList[i].rating.toString()),
-                                            ],
-                                          ),
-                                          Row
-                                          (
-                                            children: 
-                                            [
-                                              Text(itemsList[i].discountPercentage.toString() + "%"),
-                                              Icon(Icons.discount),
-                                            ],
-                                          ),
-                                        ],
+                                        title: Text(itemsList[i].title),
+                                        subtitle: Text(itemsList[i].description.toString()),
                                       ),
-                                      
-                                    ),
-                                  ],
+                                      // ListTile
+                                      // (
+                                      //   title: Text(itemsList[i].title),
+                                      //   subtitle: Text(itemsList[i].description.toString()),
+                                      // ),
+                                      // ListTile
+                                      // (
+                                      //   title: Text(itemsList[i].title),
+                                      //   subtitle: Text(itemsList[i].description.toString()),
+                                      // ),
+                                      // ListTile
+                                      // (
+                                      //   title: Text(itemsList[i].title),
+                                      //   subtitle: Text(itemsList[i].description.toString()),
+                                      // ),
+                                      // ListTile
+                                      // (
+                                      //   title: Text(itemsList[i].title),
+                                      //   subtitle: Text(itemsList[i].description.toString()),
+                                      // ),
+                                      // ListTile
+                                      // (
+                                      //   title: Text(itemsList[i].title),
+                                      //   subtitle: Text(itemsList[i].description.toString()),
+                                      // ),
+
+                                      // ListTile
+                                      // (
+                                      //   title: Text("\$" + itemsList[i].price.toString()),
+                                      //   // subtitle: Text(itemsList[i].description.toString()),
+                                      // ),
+                                      Padding
+                                      (
+                                        padding: EdgeInsets.only(left: 15.0, bottom: 15.0),
+                                        child: Text("\$" + itemsList[i].price.toString()),
+                                      ),
+                                      Padding
+                                      (
+                                        padding: EdgeInsets.only(left: 15.0, right: 15.0, bottom: 15.0),
+                                        child: Row
+                                        (
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: 
+                                          [
+                                            Row
+                                            (
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: 
+                                              [
+                                                Icon(Icons.star),
+                                                Text(itemsList[i].rating.toString()),
+                                              ],
+                                            ),
+                                            Row
+                                            (
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: 
+                                              [
+                                                Text(itemsList[i].discountPercentage.toString() + "%"),
+                                                Icon(Icons.discount),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                        
+                                      ),
+                                    ],
+                                  ),]
                                 ),
                               );
                             }
