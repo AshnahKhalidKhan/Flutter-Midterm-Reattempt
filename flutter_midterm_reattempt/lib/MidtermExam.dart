@@ -135,7 +135,71 @@ ListView _buildingView(List<Products> itemsList)
                       IconButton
                       (
                         icon: Icon(Icons.remove_red_eye_sharp),
-                        onPressed: () {},
+                        onPressed: () 
+                        {
+                          showModalBottomSheet<void>
+                          (
+                            context: context, 
+                            builder: (BuildContext context)
+                            {
+                              return Container
+                              (
+                                // child: Text(itemsList[i].title),
+                                // height: double.minPositive,
+                                child: Column
+                                (
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: 
+                                  [
+                                    ListTile
+                                    (
+                                      title: Text(itemsList[i].title),
+                                      subtitle: Text(itemsList[i].description.toString()),
+                                    ),
+                                    // ListTile
+                                    // (
+                                    //   title: Text("\$" + itemsList[i].price.toString()),
+                                    //   // subtitle: Text(itemsList[i].description.toString()),
+                                    // ),
+                                    Padding
+                                    (
+                                      padding: EdgeInsets.only(left: 15.0, bottom: 15.0),
+                                      child: Text("\$" + itemsList[i].price.toString()),
+                                    ),
+                                    Padding
+                                    (
+                                      padding: EdgeInsets.only(left: 15.0, right: 15.0, bottom: 15.0),
+                                      child: Row
+                                      (
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: 
+                                        [
+                                          Row
+                                          (
+                                            children: 
+                                            [
+                                              Icon(Icons.star),
+                                              Text(itemsList[i].rating.toString()),
+                                            ],
+                                          ),
+                                          Row
+                                          (
+                                            children: 
+                                            [
+                                              Text(itemsList[i].discountPercentage.toString() + "%"),
+                                              Icon(Icons.discount),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                      
+                                    ),
+                                  ],
+                                ),
+                              );
+                            }
+                          );
+                        },
                       ),
                     ],
                   )
