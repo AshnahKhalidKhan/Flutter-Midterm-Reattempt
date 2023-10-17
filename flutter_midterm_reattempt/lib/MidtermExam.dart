@@ -158,96 +158,131 @@ ListView _buildingView(List<Products> itemsList)
                                 // height: MediaQuery.of(context).size.height,
                                 child: Wrap
                                 (
-                                  children: [Column
-                                  (
-                                  // 
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: 
-                                    [
-                                      // ListView.builder
-                                      // (
-                                      //   itemCount: 4,
-                                      //   itemBuilder: (context, i)
-                                      //   {
-                                      //     return Card
-                                      //     (
-                                      //       color: Colors.amber,
-                                      //     );
-                                      //   }
-                                      // ),
-                                      ListTile
-                                      (
-                                        title: Text(itemsList[i].title),
-                                        subtitle: Text(itemsList[i].description.toString()),
-                                      ),
-                                      // ListTile
-                                      // (
-                                      //   title: Text(itemsList[i].title),
-                                      //   subtitle: Text(itemsList[i].description.toString()),
-                                      // ),
-                                      // ListTile
-                                      // (
-                                      //   title: Text(itemsList[i].title),
-                                      //   subtitle: Text(itemsList[i].description.toString()),
-                                      // ),
-                                      // ListTile
-                                      // (
-                                      //   title: Text(itemsList[i].title),
-                                      //   subtitle: Text(itemsList[i].description.toString()),
-                                      // ),
-                                      // ListTile
-                                      // (
-                                      //   title: Text(itemsList[i].title),
-                                      //   subtitle: Text(itemsList[i].description.toString()),
-                                      // ),
-                                      // ListTile
-                                      // (
-                                      //   title: Text(itemsList[i].title),
-                                      //   subtitle: Text(itemsList[i].description.toString()),
-                                      // ),
-
-                                      // ListTile
-                                      // (
-                                      //   title: Text("\$" + itemsList[i].price.toString()),
-                                      //   // subtitle: Text(itemsList[i].description.toString()),
-                                      // ),
-                                      Padding
-                                      (
-                                        padding: EdgeInsets.only(left: 15.0, bottom: 15.0),
-                                        child: Text("\$" + itemsList[i].price.toString()),
-                                      ),
-                                      Padding
-                                      (
-                                        padding: EdgeInsets.only(left: 15.0, right: 15.0, bottom: 15.0),
-                                        child: Row
+                                  children: 
+                                  [
+                                    Column
+                                    (
+                                    // 
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: 
+                                      [
+                                        Container
                                         (
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          children: 
-                                          [
-                                            Row
-                                            (
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                              children: 
-                                              [
-                                                Icon(Icons.star),
-                                                Text(itemsList[i].rating.toString()),
-                                              ],
-                                            ),
-                                            Row
-                                            (
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                              children: 
-                                              [
-                                                Text(itemsList[i].discountPercentage.toString() + "%"),
-                                                Icon(Icons.discount),
-                                              ],
-                                            ),
-                                          ],
+                                          width: double.infinity,
+                                          height: 100,
+                                          child: ListView
+                                          (
+                                            scrollDirection: Axis.horizontal,
+                                            children: itemsList[i].images != null && itemsList[i].images.isNotEmpty ? itemsList[i].images.map((imageInList) 
+                                            {
+                                              return Card
+                                              (
+                                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+                                                child: Container
+                                                (
+                                                  decoration: BoxDecoration
+                                                  (
+                                                    borderRadius: BorderRadius.circular(20.0),
+                                                    // image: DecorationImage
+                                                    // (
+                                                    //   image: NetworkImage(imageInList),
+                                                    // )
+                                                  ),
+                                                  child: Image.network
+                                                  (
+                                                    imageInList,
+                                                    
+                                                  ),
+                                                ),
+                                              );
+                                            }).toList() : <Widget>[],
+                                          ),
                                         ),
-                                        
-                                      ),
-                                    ],
-                                  ),]
+                                        // ListView.builder
+                                        // (
+                                        //   itemCount: 4,
+                                        //   itemBuilder: (context, i)
+                                        //   {
+                                        //     return Card
+                                        //     (
+                                        //       color: Colors.amber,
+                                        //     );
+                                        //   }
+                                        // ),
+                                        ListTile
+                                        (
+                                          title: Text(itemsList[i].title),
+                                          subtitle: Text(itemsList[i].description.toString()),
+                                        ),
+                                        // ListTile
+                                        // (
+                                        //   title: Text(itemsList[i].title),
+                                        //   subtitle: Text(itemsList[i].description.toString()),
+                                        // ),
+                                        // ListTile
+                                        // (
+                                        //   title: Text(itemsList[i].title),
+                                        //   subtitle: Text(itemsList[i].description.toString()),
+                                        // ),
+                                        // ListTile
+                                        // (
+                                        //   title: Text(itemsList[i].title),
+                                        //   subtitle: Text(itemsList[i].description.toString()),
+                                        // ),
+                                        // ListTile
+                                        // (
+                                        //   title: Text(itemsList[i].title),
+                                        //   subtitle: Text(itemsList[i].description.toString()),
+                                        // ),
+                                        // ListTile
+                                        // (
+                                        //   title: Text(itemsList[i].title),
+                                        //   subtitle: Text(itemsList[i].description.toString()),
+                                        // ),
+
+                                        // ListTile
+                                        // (
+                                        //   title: Text("\$" + itemsList[i].price.toString()),
+                                        //   // subtitle: Text(itemsList[i].description.toString()),
+                                        // ),
+                                        Padding
+                                        (
+                                          padding: EdgeInsets.only(left: 15.0, bottom: 15.0),
+                                          child: Text("\$" + itemsList[i].price.toString()),
+                                        ),
+                                        Padding
+                                        (
+                                          padding: EdgeInsets.only(left: 15.0, right: 15.0, bottom: 15.0),
+                                          child: Row
+                                          (
+                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                            children: 
+                                            [
+                                              Row
+                                              (
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: 
+                                                [
+                                                  Icon(Icons.star),
+                                                  Text(itemsList[i].rating.toString()),
+                                                ],
+                                              ),
+                                              Row
+                                              (
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: 
+                                                [
+                                                  Text(itemsList[i].discountPercentage.toString() + "%"),
+                                                  Icon(Icons.discount),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                          
+                                        ),
+                                      ],
+                                    ),
+                                  ]
                                 ),
                               );
                             }
