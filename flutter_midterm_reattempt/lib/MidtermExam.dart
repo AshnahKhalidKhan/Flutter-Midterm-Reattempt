@@ -20,7 +20,7 @@ Future<List<Products>> _fetchingData() async
   }
   else
   {
-    throw Exception('Erorrr');
+    throw Exception('Error');
   }
 }
 
